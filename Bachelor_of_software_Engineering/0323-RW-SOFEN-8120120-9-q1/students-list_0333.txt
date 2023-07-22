@@ -2,3 +2,4 @@ r.iradukund@alustudent.com,50,1234456
 enoch@alustudent.com,12,485769
 shyaka2@alustudent.com,39,84748574
 renoir@alustudent.com,32,3847565785
+b.mukankusi@alustudent.com,23,535000858
