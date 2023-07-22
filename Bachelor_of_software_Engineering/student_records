@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#allows the user to enter the student record
+filename="students-list_0333.txt"
+
+echo "Student PID: "
+read -r PID
+sleep 1
+
+echo "Student email: "
+read -r email
+sleep 1
+
+echo "Student age: "
+read -r age
+
+echo "$PID-$email-$age" >> "$filename"
+echo "Information succesfully saved"
+
+export Email="$email"
+export PID="$PID"
