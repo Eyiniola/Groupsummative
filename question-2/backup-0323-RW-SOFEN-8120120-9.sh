@@ -1,20 +1,12 @@
-#!/bin/bash
-# Creates shell script to back up the directory in part a
-host="a0dfc11ba139.a982e858.alu-cod.online"
-user="a0dfc11ba139"
-password="899c79fc532cd0591af1"
-source_directory="/Groupsummative"
-backup_location="/home/sftp-student/03033/summative"
-sshpass -p $password scp -r "$source_directory" $user@$host:$backup_location
-
-username="a0dfc11ba139"
-password="899c79fc532cd0591af1"
-remote_host="a0dfc11ba139.a982e858.alu-cod.online"
+#!/usr/bin/env bash
+# Backup the target directory to a remote server computer
+remote_server="a0dfc11ba139.a982e858.alu-cod.online"
+remote_username="a0dfc11ba139"
+remote_password="899c79fc532cd0591af1"
 remote_directory="/home/sftp-student/03033/summative"
+target_directory="question-1"
 
-cd "$source_directory" || exit 1
-directory_name=$(basename "$source_directory")
-archive_name="backup-$directory_name.tar.gz"
-tar -czf "$archive_name" "$directory_name"
+# Use scp to copy the target directory to the remote server
+scp -r "$target_directory" "$remote_username@$remote_server:$remote_directory"
 
-sshpass -p "$password" scp "$archive_name" "$username@$remote_host:$remote_directory"
+echo "Backup of $target_directory created on $remote_serve."
